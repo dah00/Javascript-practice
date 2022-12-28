@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1. object properties
+      const name = "john snow";
+
+      const obj = {
+        [name]: "hello",
+        [1 + 2]: "hihi",
+      };
+
+      //2
+      const a = "Simon";
+      const b = true;
+      const c = {};
+
+      const obj1 = {
+        a,
+        b,
+        c,
+      };
+
+      //3. Destructuring
+      const obj2 = {
+        player: "bobby",
+        experience: 100,
+        wizardLevel: false,
+      };
+      const { player, experience } = obj2;
+      // this is equivalent to below
+      /* 
+    const player = obj2.player;
+    const experience = obj2.experience; */
+
+      //4. Template strings
+      const surname = "Sally";
+      const age = 34;
+      const pet = "horse";
+
+      const greetingBest = `Hello ${surname} you seem to be ${
+        age - 10
+      }. What a lovely ${pet} you have`;
+
+      //5. Symbol
+      let sym1 = Symbol();
+      let sym2 = Symbol("foo");
+      let sym3 = Symbol("foo");
+
+      sym2 === sym3;
+      // will retunr false because Symbol() create a unique type of variables
+
+      //6. Arrow function
+      function add(a, b) {
+        return a + b;
+      }
+      //the same as
+      const add = (a, b) => a + b;
+    </script>
+  </body>
+</html>
