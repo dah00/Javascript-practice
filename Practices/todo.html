@@ -49,12 +49,21 @@
           id: id,
         });
 
+        textbox.value = "";
+
         render();
       }
 
       function deleteTodo(event) {
         const deleteButton = event.target;
         const idToDelete = deleteButton.id;
+
+        todos = todos.filter(function (todo) {
+          if (todo.id === idToDelete) return false;
+          else return true;
+        });
+
+        render();
       }
 
       function render() {
