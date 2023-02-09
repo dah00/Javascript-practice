@@ -8,19 +8,25 @@ const newArray = array.forEach((num) => {
 console.log(double);
 
 // map, filter, reduce
+
+// the return value gets automatically added to the mapArray
+// the map must have a return value
 const mapArray = array.map((num) => {
     return num + 2;
-}); // the return value gets automatically added to the mapArray
-// the map must have a return value
-
+}); 
+/*
+    [3, 4, 12, 18]
+*/
 
 
 //filter
 const filterArray = array.filter(num => {
     return num > 5
 })
-
 console.log('filter', filterArray);
+/*
+    [10, 16]
+*/
 
 
 
@@ -28,7 +34,8 @@ console.log('filter', filterArray);
 const reduceArray = array.reduce((accumulator, num) => {
     return accumulator + num
 }, 0);     // accumulator is set to 0
-console.log('reduce', reduceArray); // 29
+console.log('reduce', reduceArray); 
+// 29
 
 
 

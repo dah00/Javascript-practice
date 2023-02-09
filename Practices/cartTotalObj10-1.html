@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Total</title>
+  </head>
+  <body>
+    <div id="receipt"></div>
+  </body>
+
+  <script>
+    let cartTotal = [
+      { name: "Apple", price: 4, quantity: 2 },
+      { name: "Orange", price: 3, quantity: 3 },
+    ];
+
+    let receipt = document.getElementById("receipt");
+    function displayReceipt() {
+      receipt.innerHTML = "";
+
+      cartTotal.forEach(function (item) {
+        let div = document.createElement("div");
+        div.innerHTML = `${item.name} $${item.price} * ${item.quantity}`;
+        receipt.appendChild(div);
+      });
+
+      let total = 0;
+      cartTotal.forEach(function (item) {
+        total += item.price * item.quantity;
+      });
+
+      const totalLine = document.createElement("div");
+      totalLine.innerText = `Cart Total = $${total}`;
+      receipt.appendChild(totalLine);
+    }
+
+    displayReceipt();
+  </script>
+</html>

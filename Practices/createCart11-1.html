@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create Cart</title>
+  </head>
+  <body></body>
+
+  <script>
+    let foodPrices = { Apple: 3, Orange: 4, Egg: 2 };
+
+    let total = 0;
+
+    function createCart(obj) {
+      const properties = Object.keys(obj);
+
+      properties.forEach(function (item) {
+        // Might have to change property to item
+        const line = document.createElement("div");
+        const foodPrice = obj[item];
+        line.innerText = item + " $" + foodPrice;
+
+        const addButton = document.createElement("button");
+        addButton.innerText = "Add";
+        addButton.style = "margin-left: 15px";
+        addButton.id = new Date().getDate();
+
+        addButton.onclick = function () {
+          total += foodPrice;
+          // TODO: know how does it know the corresponding price of the add button
+          // since we inside a for loop
+        };
+
+        line.appendChild(addButton);
+
+        document.body.appendChild(line);
+      });
+    }
+
+    createCart(foodPrices);
+  </script>
+</html>
